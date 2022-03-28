@@ -1,28 +1,32 @@
 {
   "name": "easy-commitizen",
   "version": "1.0.0",
-  "author": "destin",
-  "license": "MIT",
-  "main": "index.js",
   "description": "Simply and quickly set up the commitizen for your project",
+  "keywords": [
+    "commitizen"
+  ],
+  "license": "MIT",
+  "author": "destin",
+  "main": "index.js",
+  "bin": {
+    "ec": "./bin/ec.js"
+  },
   "scripts": {
     "c": "git add . && git-cz",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "bin": {
-    "ec": "./bin/ec.js"
-  },
-  "keywords": [
-    "commitizen"
-  ],
   "dependencies": {
     "chalk": "^4.1.2",
     "commitizen": "^4.2.4",
     "cross-spawn": "^7.0.3",
     "cz-emoji-conventional": "^1.0.1",
     "inquirer": "^8.2.2",
-    "plop": "^3.0.5",
     "read-pkg": "^7.1.0"
+  },
+  "devDependencies": {
+    "@vue/eslint-config-standard": "^6.1.0",
+    "eslint": "^8.12.0",
+    "eslint-config-airbnb": "^19.0.4"
   },
   "config": {
     "commitizen": {
