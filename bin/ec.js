@@ -3,21 +3,11 @@
 const inquirer = require('inquirer')
 const chalk = require('chalk')
 const spawn = require('cross-spawn')
-const semver = require('semver')
 const questions = require('../lib/questions')
+const checkEnv = require('../lib/checkenv')
 const requiredVersion = require('../package.json').engines.node
 
-function checkNodeVersion (wanted, id) {
-  if (!semver.satisfies(process.version, wanted, { includePrerelease: true })) {
-    console.log(chalk.red(
-      'You are using Node ' + process.version + ', but this version of ' + id +
-      ' requires Node ' + wanted + '.\nPlease upgrade your Node version.'
-    ))
-    process.exit(1)
-  }
-}
-
-checkNodeVersion(requiredVersion, 'commitizen')
+checkEnv({ wanted: requiredVersion, id: 'commitizen' })
 
 inquirer.prompt(questions).then((answers) => {
   console.log(chalk.cyan('🕑  开始安装依赖，请等待...'))
