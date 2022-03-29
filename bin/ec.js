@@ -9,20 +9,25 @@ const requiredVersion = require('../package.json').engines.node
 
 checkEnv({ wanted: requiredVersion, id: 'commitizen' })
 
-inquirer.prompt(questions).then((answers) => {
-  console.log(chalk.cyan('🕑  开始安装依赖，请等待...'))
-  const { adapter } = answers
-  if(adapter) {
-    spawn.sync('npm', ['i', 'commitizen', adapter], { stdio: 'inherit' })
-    spawn.sync('echo', [`{"path": "${adapter}"}`,'>','.czrc'],{ stdio: 'inherit' })
-    console.log(chalk.cyan('✅ 依赖安装完成！'))
-  }
-}).catch((error) => {
-  console.log(chalk.red('❌ 项目配置失败:'))
-  if (error.isTtyError) {
-    console.log(chalk.red("Prompt couldn't be rendered in the current environment"))
-  } else {
-    console.log(chalk.red(error))
-  }
-  process.exit(1)
-})
+function installDependencies(adapter) {
+  spawn.sync('npm', ['i', 'commitizen', adapter], { stdio: 'inherit' })
+  spawn.sync('echo', [`{"path": "${adapter}"}`, '>', '.czrc'], { stdio: 'inherit' })
+  console.log(chalk.cyan('✅ Dependent installation complete！'))
+}
+
+inquirer
+  .prompt(questions)
+  .then(answers => {
+    console.log(chalk.cyan('🕑  Please wait while the dependency installation starts...'))
+    const { byDefault, adapter } = answers
+    installDependencies(byDefault ? 'cz-conventional-changelog' : adapter)
+  })
+  .catch(error => {
+    console.log(chalk.red('❌ Project configuration failed:'))
+    if (error.isTtyError) {
+      console.log(chalk.red("Prompt couldn't be rendered in the current environment"))
+    } else {
+      console.log(chalk.red(error))
+    }
+    process.exit(1)
+  })
