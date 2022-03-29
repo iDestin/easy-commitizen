@@ -10,10 +10,16 @@ npm install -G easy-commitizen
 
 ## Usage
 
-just run ec on your terminal
+enter your project root directory, open the terminal and run the ec command
 
 ```shell
 $ ec
+```
+
+tip: please make sure your project has used git, If not, you can use the following command to initialize
+
+```shell
+$ git init
 ```
 
 ## License
