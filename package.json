@@ -1,6 +1,6 @@
 {
   "name": "easy-commitizen",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Simply and quickly set up the commitizen for your project",
   "keywords": [
     "commitizen"
