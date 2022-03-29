@@ -3,15 +3,18 @@
 const inquirer = require('inquirer')
 const chalk = require('chalk')
 const spawn = require('cross-spawn')
+const path = require('path')
 const questions = require('../lib/questions')
 const checkEnv = require('../lib/checkenv')
+const { createCzConfig } = require('../lib/utils')
 const requiredVersion = require('../package.json').engines.node
 
 checkEnv({ wanted: requiredVersion, id: 'commitizen' })
 
 function installDependencies(adapter) {
+  const filePath = path.resolve(process.cwd(), 'package.json')
   spawn.sync('npm', ['i', 'commitizen', adapter], { stdio: 'inherit' })
-  spawn.sync('echo', [`{"path": "${adapter}"}`, '>', '.czrc'], { stdio: 'inherit' })
+  createCzConfig(filePath, adapter)
   console.log(chalk.cyan('✅ Dependent installation complete！'))
 }
 
