@@ -1,16 +1,24 @@
 {
   "name": "easy-commitizen",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "Simply and quickly set up the commitizen for your project",
-  "keywords": [
-    "commitizen"
-  ],
   "license": "MIT",
   "author": "destin",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iDestin/easy-commitizen.git"
+  },
+  "keywords": [
+    "commitizen"
+  ],
   "bin": {
     "ec": "./bin/ec.js"
   },
+  "bugs": {
+    "url": "https://github.com/iDestin/easy-commitizen/issues"
+  },
+  "homepage": "https://github.com/iDestin/easy-commitizen",
   "scripts": {
     "c": "git add . && git-cz",
     "test": "echo \"Error: no test specified\" && exit 1"
