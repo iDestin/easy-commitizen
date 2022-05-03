@@ -1,6 +1,6 @@
 <img align="center" alt="easy-commitizen Logo" src="https://s3.bmp.ovh/imgs/2022/05/03/c3cc0fd5a40bc365.png" title="easy-commitizen"/>
 
-<p>A tool, Simply and quickly set up the commitizen for your project</p>
+A tool, Simply and quickly set up the `commitizen` for your project
 
 **English** | [简体中文](./README.zh-CN.md)
 

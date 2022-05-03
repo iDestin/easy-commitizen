@@ -1,6 +1,6 @@
 <img align="center" alt="easy-commitizen Logo" src="https://s3.bmp.ovh/imgs/2022/05/03/c3cc0fd5a40bc365.png" title="easy-commitizen"/>
 
-<p>一个工具，帮你的项目简单快速的初始化 `commitizen`</p>
+一个工具，帮你的项目简单快速的初始化 `commitizen`
 
 [English](./README.md) | **简体中文**
 
