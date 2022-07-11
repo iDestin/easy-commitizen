@@ -1,5 +1,3 @@
 module.exports = {
-  extends: [
-    "airbnb",
-  ],
+  extends: ['@idestin/eslint-config-basic'],
 }

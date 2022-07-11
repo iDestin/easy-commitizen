@@ -2,28 +2,32 @@
   "name": "easy-commitizen",
   "version": "1.1.1",
   "description": "Simply and quickly set up the commitizen for your project",
-  "license": "MIT",
   "author": "destin",
-  "main": "index.js",
+  "license": "MIT",
+  "homepage": "https://github.com/iDestin/easy-commitizen",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/iDestin/easy-commitizen.git"
   },
-  "keywords": [
-    "commitizen"
-  ],
-  "bin": {
-    "ec": "./bin/ec.js"
-  },
   "bugs": {
     "url": "https://github.com/iDestin/easy-commitizen/issues"
   },
-  "homepage": "https://github.com/iDestin/easy-commitizen",
+  "keywords": [
+    "commitizen"
+  ],
+  "main": "index.js",
+  "bin": {
+    "ec": "./bin/ec.js"
+  },
+  "engines": {
+    "node": ">= 12.0.0"
+  },
   "scripts": {
     "c": "git add . && git-cz",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@idestin/eslint-config-basic": "^0.0.1",
     "@npmcli/package-json": "^2.0.0",
     "chalk": "^4.1.2",
     "commitizen": "^4.2.4",
@@ -33,15 +37,11 @@
     "semver": "^7.3.5"
   },
   "devDependencies": {
-    "eslint": "^8.12.0",
-    "eslint-config-airbnb": "^19.0.4"
+    "eslint": "^8.16.0"
   },
   "config": {
     "commitizen": {
       "path": "cz-emoji-conventional"
     }
-  },
-  "engines": {
-    "node": ">= 12.0.0"
   }
 }
